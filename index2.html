@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .parent{
+                width:400px;
+                height:300px;
+                background-color: #363636;
+                text-align: center;
+            }
+            .parent:hover > .circle1{
+                transform:scale(1,1);
+            }
+            .circle1{
+                /* state 1 neemuch */ 
+                transition: all 0.3s linear;
+                display: inline-block;
+                width:60px;
+                height:60px;
+                line-height: 60px;
+                border-radius: 60px;
+                color:#333;
+                background-color:#fff;
+                position: relative;
+                top:110px;
+                cursor:pointer;
+                transform: scale(0,0)
+            }
+            .circle2{ /*state 1*/ 
+                transform-origin:-35px 50% ;
+                transition:all 0.3s linear;
+                transform:rotate(0deg);
+                position:absolute;
+                top:0px;
+                left:65px;
+            }
+            .parent:hover > .circle1 > .circle2{ /*state 2*/
+               transform:rotate(360deg);
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div class="parent">
+            <div class="circle1">
+                <i class="fa-solid fa-link"></i>
+                <div class="circle1 circle2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </body>
+    </html>
